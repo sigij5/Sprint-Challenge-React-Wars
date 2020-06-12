@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css';
 import { BASE_URL } from './API'
 import Character from './components/Character'
+import SearchBar from './components/SearchBar/SearchBar'
 
 
 
@@ -10,7 +11,7 @@ import Character from './components/Character'
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [characterInfo, setCharacterInfo] = useState({});
+  const [characterInfoOpen, setCharacterInfo] = useState({});
   const [characterList, setCharacterList] = useState([]);
   const [searchText, setSearchText] = useState('')
   // const [key, setKey] = useState(1);
@@ -54,17 +55,18 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      {/* <Character listOfCharacters ={characterList.filter(character=>{
+      <SearchBar updater={setSearchText}/>
+      <Character listOfCharacters ={characterList.filter(character=>{
         if(!searchText || character.name.includes(searchText)){
           return character}
           return false
-      })}/> */}
-      <p>{characterList[0].name}</p>
+      })}/>
+      {/* <p>{characterList[0].name}</p> */}
 
       {/* <Character listOfCharacters={characterList}/> */}
       <div></div>
     </div>
   );
-}
+};
 
 export default App;
