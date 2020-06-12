@@ -2,6 +2,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import Button from './Button'
+import Details from './Details'
 
 const CharacterDiv = styled.div`
     display: flex;
@@ -19,6 +20,14 @@ const CharacterDiv = styled.div`
 
 const Character = props => {
     const { listOfCharacters } = props
+    // const [currentFriend, setCurrentFriend] = useState(null)
+
+    // const openDetails = name => {
+    //     setCurrentFriend(name)
+    // }
+    // const closeDetails = () => {
+    //     setCurrentFriend(null)
+    // }
     // const { characterInfo } = props
     // const characterName = listOfCharacters[0].name
 
@@ -30,6 +39,7 @@ const Character = props => {
                     return <CharacterDiv>
                             <h1>{character.name}</h1>
                             <Button>Info</Button>
+                            {/* {currentFriend && <Details friendName = {currentFriend} close = {closeDetails}/>} */}
                         </CharacterDiv>
             })
             }
